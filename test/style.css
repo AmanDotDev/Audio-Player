@@ -1,0 +1,29 @@
+.container {
+  height: 90vh;
+  width: 50vw;
+  background-color: rgb(14, 14, 14);
+}
+.fav {
+  height: 90vh;
+  width: 50vw;
+  border: 3px white solid;
+}
+
+h2 {
+  color: white;
+}
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: aliceblue;
+  position: relative;
+}
+.add {
+  height: 40px;
+  width: 40px;
+  background-color: green;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  border-radius: 50%;
+}

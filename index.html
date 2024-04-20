@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="home flex relative">
+        <div class="leftbar w-[20vw] h-screen bg-[#1A1F3D] fixed">
+            <div class="btns h-[90%] w-full text-white flex items-start justify-start p-8 flex-col">
+                <div class="inline">
+                    <h3 class="font-bold text-[20px] mb-4">FEATURED LIST</h3>
+                    <a href="#"><i class="ri-home-line icons"></i>Featured</a>
+                    <a href="#"><i class="ri-music-2-line icons"></i>All Audios</a>
+                    <a href="#"><i class="ri-heart-line icons"></i>Favourites</a>
+                    <a href="#"><i class="ri-radio-2-line icons"></i>FM</a>
+                </div>
+                <div class="inline">
+                    <h3 class="font-bold text-[20px] mb-4 mt-4">Your Channel</h3>
+                    <a href="#"><i class="ri-user-line icons"></i></i>Your Channel</a>
+                    <a href="#"><i class="ri-history-fill icons"></i></i>History</a>
+                    <a href="#"><i class="ri-thumb-up-line icons"></i>Liked Audios</a>
+                    <a href="#"><i class="ri-timer-line icons"></i>Watch later</a>
+                </div>
+            </div>
+            <div class="btns h-[10%] w-full flex items-center justify-center">
+                <button class="py-2 px-8 font-bold bg-blue-500 rounded-full text-zinc-900 tracking-[.6px] text-[13px]">TRY PREMIUM<i
+                        class="ri-bard-line text-[17px] pl-2 bardicon text-"></i></button>
+            </div>
+        </div>
+        <div class="rightSection w-[100vw] h-screen ">
+            <div class="w-full h-[10vh] flex items-center justify-between px-8">
+                <i class="ri-menu-2-line text-white Featured"></i>
+                <input class="search bg-[#1B3D57] rounded-3xl p-2" type="text" placeholder="  search">
+                <div class="profile w-10 h-10 bg-yellow-900 rounded-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1545153996-4b00d00d95a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHx8"
+                        alt="">
+                </div>
+            </div>
+            <div class="w-full h-[80vh] flex justify-between px-8 ">
+                <div class="bgImg h-full w-3/4 bg-zinc-800 mr-8 rounded-2xl">
+                    <img src="" alt="">
+                </div>
+                <div class="Audios h-full w-2/5 bg- p-3 overflow-hidden ">
+                    <h2 class="font-semibold tracking-tight leading-none text-white text-[20px] mb-4">Featured For You
+                    </h2>
+                    <div class="Container flex justify-between flex-wrap ">
+                        <!-- <div class="songcard text-white mb-4">
+                            <div class="thumbnail h-40 w-40 bg-[#1B3D57] mb-1 rounded-[10px] overflow-hidden">
+                                <img class="w-full h-full object-cover"
+                                    src="https://plus.unsplash.com/premium_photo-1673631128603-3fd421af36c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2F0ZXIlMjBpbiUyMGZvcmVzdHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+                            </div>
+                            <h5 class="font-semibold text-[14px] opacity-70 leading-none py-[5px]">Audio Name</h5>
+                            <p class="opacity-40 text-[11px] leading-none ">@user</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="actions h-[10vh] w-full flex px-8 py-2 text-white fixed ">
+                <div class="controls w-1/5 h-full text-4xl flex items-center justify-evenly">
+                    <span><i class="ri-skip-left-line text-[25px]"></i></span>
+                    <span><i class="ri-play-circle-fill"></i></span>
+                    <span><i class="ri-skip-right-line text-[25px]"></i></span>
+                </div>
+                <div class="progress w-3/5 h-full flex items-center justify-center">
+                    <!-- <div class="dummy h-[2px] w-[95%] bg-blue-900 text-black"></div> -->
+                    <input class="w-full h-[3px]" type="range" id="progressBar" min="0" max="100" value="0">
+                </div>
+                <!-- <div class="volume  w-1/5 h-full text-2xl font-light flex items-center justify-evenly"><i
+                        class="ri-volume-up-line"></i><input class="h-[2px]" type="range" id="volumeControl" min="0"
+                        max="1" step="0.1" value="1"></div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="favouritesCont">
+        <div class="favourites">
+            <div class="icon h-full w-14 flex items-start justify-center pt-2">
+                <i class="ri-heart-fill"></i>
+            </div>
+            <div class="favAudios text-white mb-4">
+                <div class="thumbnail h-40 w-40 bg-[#1B3D57] mb-1 rounded-[10px] overflow-hidden">
+                    <img class="w-full h-full object-cover"
+                        src="https://plus.unsplash.com/premium_photo-1673631128603-3fd421af36c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2F0ZXIlMjBpbiUyMGZvcmVzdHxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div id="allAudios" class="Audios min-h-[150vh] w-4/5  p-9 overflow-hidden absolute right-0 pb-[10vh] ">
+        <h2 class="font-semibold tracking-tight leading-none text-white text-[30px] mb-4">All Audios</h2>
+        <div class="allAudiosContainer flex gap-[30px] flex-wrap items-center justify-evenly pt-[5vh] pb-[10vh]">
+            <!-- <div class="songcard text-white mb-4">
+                <div class="thumbnail h-40 w-40 bg-[#1B3D57] mb-1 rounded-[10px] overflow-hidden">
+                    <img class="w-full h-full object-cover"
+                        src="https://plus.unsplash.com/premium_photo-1673631128603-3fd421af36c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2F0ZXIlMjBpbiUyMGZvcmVzdHxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="">
+                </div>
+                <h5 class="font-semibold text-[14px] opacity-70 leading-none py-[5px]">Audio Name</h5>
+                <p class="opacity-40 text-[11px] leading-none ">@user</p>
+            </div> -->
+        </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
